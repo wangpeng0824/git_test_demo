@@ -1,0 +1,300 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.primeton.bps</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0.0.0</version>
+		<relativePath>../../../build/com.primeton.bps.pom.parents/pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.primeton.bps.extension</groupId>
+	<artifactId>org.gocom.bps.wfclient</artifactId>
+	<version>${bps.version}</version>
+	<packaging>jar</packaging> 
+	<properties>
+		<upload.file.infos>
+			${project.groupId}:bps-client4java:${project.version}:${basedir}/target/bps-client-${project.version}.war,			
+			${project.groupId}:bps-client4java:${project.version}:remote:${basedir}/target/bps-client-${project.version}-remote.war,
+			${project.groupId}:bps-client4java:${project.version}:sources:${basedir}/target/bps-client-${project.version}-sources.zip
+		</upload.file.infos>
+	</properties>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**/delete.me</exclude>
+					<exclude>**/deleteme</exclude>
+					<exclude>**/deleteme.txt</exclude>
+					<exclude>**/uddi-address.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		
+		<plugins>
+			
+			<plugin>
+				<groupId>com.primeton.ptp.build</groupId>
+				<artifactId>maven-eos-war-build-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>downloads</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+							<artifactStrs>
+								<!-- resource -->
+								com.primeton.bps.extension:com.primeton.bps.web.control:${bps.version}:war:${project.build.directory}/temp,
+								com.primeton.components.nui:nui:3.3.1:zip:${project.build.directory}/temp,
+								<!-- 3rd -->
+								com.primeton.3rd.objectweb:asm:1.5.3:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:axiom-api:1.2.5:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:axiom-dom:1.2.5:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:axiom-impl:1.2.5:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:commons-beanutils:1.6.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:commons-collections:3.2:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:commons-io:1.4:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:commons-lang:2.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:commons-logging:1.1.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.dom4j:dom4j:1.6.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.codehaus:jackson-core-asl:1.9.12:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.codehaus:jackson-jaxrs:1.9.12:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.codehaus:jackson-mapper-asl:1.9.12:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.codehaus:jackson-xc:1.9.12:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.javassist:javassist:3.3:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.javax:javax.servlet:2.5:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.javax:jaxb-api:2.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.jboss:jboss-cache-core:2.2.1.GA:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.codehaus:jettison:1.0:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.jgroups:jgroups:2.6.5.GA:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:log4j:1.2.8:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:ognl:2.6.9:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.eclipse:org.eclipse.emf.common:2.2.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.eclipse:org.eclipse.emf.ecore.xmi:2.2.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.eclipse:org.eclipse.emf.ecore:2.2.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.javax:saaj-api:1.3:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.soa:sdo-api:2.1.0:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.slf4j:slf4j-api:1.7.6:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.javax:stax-api:1.0.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.wsdl4j:wsdl4j-qname:1.6.1:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:wss4j:1.5.8:jar:${project.build.directory}/temp/lib,
+								com.primeton.3rd.apache:xalan:2.5.0:jar:${project.build.directory}/temp/lib,
+								
+								com.thoughtworks.xstream:xstream:1.3.1:jar:${project.build.directory}/temp/lib,
+								<!-- 安全 -->
+									com.primeton.3rd.owasp:antisamy:1.5.3:jar:${project.build.directory}/temp/lib,
+									com.primeton.3rd.apache:batik-css:1.6.1:jar:${project.build.directory}/temp/lib,
+									com.primeton.3rd.apache:batik-util:1.6.1:jar:${project.build.directory}/temp/lib,
+									com.primeton.3rd.sourceforge:nekohtml:1.9.7:jar:${project.build.directory}/temp/lib,
+									com.primeton.3rd.apache:xercesImpl:2.8.1:jar:${project.build.directory}/temp/lib,
+									com.primeton.3rd.w3c:sac:1.3:jar:${project.build.directory}/temp/lib,
+									com.primeton.3rd.apache:xml-apis:1.2.01:jar:${project.build.directory}/temp/lib,
+								<!-- 安全 -->
+								<!-- bps -->
+								com.primeton.bps.server:bps-api:${bps.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.bps.server:bps-server:${bps.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.bps.extension:bps-taglib4j:${bps.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.bps.extension:com.primeton.bps.web.control:${bps.version}:jar:${project.build.directory}/temp/lib,
+								<!-- eos -->
+								com.primeton.eos.extension:com.eos.foundation:${eos.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.eos.server:eos-server-access:${eos.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.eos.server:eos-server-access-ejb:${eos.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.eos.server:eos-server-common:${eos.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.eos.server:eos-server-data:${eos.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.eos.server:eos-server-engine:${eos.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.eos.server:eos-server-runtime:${eos.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.eos.server:eos-server-system:${eos.version}:jar:${project.build.directory}/temp/lib,
+								<!-- rest -->
+								com.primeton.components.rest:com.primeton.components.rest:${rest.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.components.rest:jaxrs-api:${rest.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.components.rest:resteasy-jackson-provider:${rest.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.components.rest:resteasy-jaxrs:${rest.version}:jar:${project.build.directory}/temp/lib,
+								<!-- ptp -->
+								com.primeton.ptp.server:ptp-server-commons:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-das:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-data:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-datacontext:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-deploy:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-jdbc:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-l7e:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-runtime:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-spring4das:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-spring:${ptp.version}:jar:${project.build.directory}/temp/lib,
+								com.primeton.ptp.server:ptp-server-statistic:${ptp.version}:jar:${project.build.directory}/temp/lib,
+							</artifactStrs>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>bps-client-war</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<unzip src="${project.build.directory}/temp/com.primeton.bps.web.control-${bps.version}.war"
+										dest="${project.build.directory}/temp/web"/>
+								<unzip src="${project.build.directory}/temp/nui-3.3.1.zip"
+										dest="${project.build.directory}/temp/nui"/>
+								<unzip src="${project.build.directory}/temp/nui/nui-3.3.1/dist/nui.zip"
+										dest="${project.build.directory}/temp/common"/>
+								<copy file="${project.build.directory}/${project.artifactId}-${bps.version}.jar"
+										todir="${project.build.directory}/lib" />
+								<war needxmlfile='false' destfile="${project.build.directory}/bps-client-${bps.version}.war">
+										<zipfileset dir="${basedir}/src/main/webapp" excludes="WEB-INF/web.xml">
+										</zipfileset>
+										<zipfileset dir="${basedir}/target"
+											includes="${project.artifactId}-${bps.version}.jar" prefix="WEB-INF/lib" />
+								</war>
+								<war destfile="${project.build.directory}/bps-client-${bps.version}-remote.war">
+										<zipfileset dir="${basedir}/src/main/webapp"></zipfileset>
+										<zipfileset dir="${project.build.directory}/temp/lib" prefix="WEB-INF/lib"></zipfileset>
+										<zipfileset dir="${project.build.directory}/temp/common" prefix=""></zipfileset>
+										<zipfileset dir="${project.build.directory}/temp/web/bps" prefix="bps"></zipfileset>
+										<zipfileset dir="${basedir}/src/main/resources" includes="uddi-address.xml" prefix="WEB-INF/classes"></zipfileset>
+										<zipfileset dir="${basedir}/target"
+											includes="${project.artifactId}-${bps.version}.jar" prefix="WEB-INF/lib" />
+								</war>
+								<zip
+									destfile="${basedir}/target/bps-client-${project.version}-sources.zip">
+									<zipfileset dir="${basedir}" prefix="">
+										<exclude name="target/**" />
+									</zipfileset>
+								</zip>
+								<delete dir="${project.build.directory}/temp"/>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.primeton.ptp.build</groupId>
+				<artifactId>maven-file-upload-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>install-files</id>
+						<phase>install</phase>
+						<goals>
+							<goal>filesupload</goal>
+						</goals>
+						<configuration>
+							<fileInfos>${upload.file.infos}</fileInfos>
+						</configuration>
+					</execution>
+					<execution>
+						<id>deploy-files</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>filesupload</goal>
+						</goals>
+						<configuration>
+							<fileInfos>${upload.file.infos}</fileInfos>
+							<url>${repository.url}</url>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<dependency>
+		  <groupId>com.primeton.components.rest</groupId>
+		  <artifactId>resteasy-jaxrs</artifactId>
+		  <version>${rest.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.primeton.components.rest</groupId>
+		  <artifactId>resteasy-jackson-provider</artifactId>
+		  <version>${rest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.primeton.components.rest</groupId>
+			<artifactId>jaxrs-api</artifactId>
+			<version>${rest.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.primeton.components.rest</groupId>
+			<artifactId>com.primeton.components.rest</artifactId>
+			<version>${rest.version}</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>com.primeton.3rd.apache</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.primeton.3rd.apache</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.primeton.ptp.server</groupId>
+			<artifactId>ptp-server-das</artifactId>
+			<version>${ptp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.primeton.ptp.server</groupId>
+			<artifactId>ptp-server-spring4das</artifactId>
+			<version>${ptp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.primeton.eos.server</groupId>
+			<artifactId>eos-server-access</artifactId>
+			<version>${eos.version}</version>
+		</dependency>	
+		<dependency>
+		  <groupId>com.primeton.eos.server</groupId>
+		  <artifactId>eos-server-engine</artifactId>
+		  <version>${eos.version}</version>
+		</dependency>		
+		<dependency>
+		  <groupId>com.primeton.eos.extension</groupId>
+		  <artifactId>com.eos.foundation</artifactId>
+		  <version>${eos.version}</version>
+		</dependency>	
+		
+		<dependency>
+			<groupId>com.primeton.bps.extension</groupId>
+			<artifactId>com.primeton.bps.web.control</artifactId>
+			<version>${bps.version}</version>
+		</dependency>		
+		<dependency>
+			<groupId>com.primeton.bps.server</groupId>
+			<artifactId>bps-api</artifactId>
+			<version>${bps.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.primeton.bps.extension</groupId>
+			<artifactId>bps-taglib4j</artifactId>
+			<version>${bps.version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>com.primeton.3rd.owasp</groupId>
+		  <artifactId>antisamy</artifactId>
+		  <version>1.5.3</version>
+		</dependency>
+	</dependencies>
+</project>

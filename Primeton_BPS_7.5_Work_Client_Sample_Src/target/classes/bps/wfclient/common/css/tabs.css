@@ -1,0 +1,72 @@
+body .mini-tabs-plain .mini-tabs-scrollCt
+{
+    border-left:0;
+    border-top:0;
+    border-right:0;
+    border:0px;
+    background:#393939;
+    height:40px;
+}
+
+.mini-tab
+{   
+    color: #201F35;  
+    border: 0px;
+    color: #9a9a9a;
+    font: 14px 微软雅黑;
+    padding: 0px 10px 3px 10px;
+    text-align: center;
+    cursor:pointer;
+    white-space:nowrap; 
+    background: #393939; 
+    height:40px;  
+}
+
+/*调整首间距*/
+.mini-tabs-space div{
+    
+    width:0px;overflow:hidden;
+    border-bottom-width:0;  
+    height:40px; 
+    border:solid 0px;
+}
+
+.mini-tabs-space2 div{
+   
+    width:0px;
+    overflow:hidden;
+    border-bottom-width:0;
+    height:40px;
+    border:solid 1px #333333;
+}
+/*设置激活tab背景色*/
+.mini-tab-active
+{
+    border-bottom:solid 1px white;
+    background:white;
+    cursor:default;
+    color: #393939;
+     
+} 
+
+.mini-tabs-bodys
+{
+    position:relative;
+    border:0px;
+    border-top:0;    
+    padding:5px;    
+    vertical-align:top;
+    text-align:left;
+    overflow:hidden;
+}
+
+
+.mini-tab-text
+{
+    display:inline-block;
+    vertical-align:middle;
+    line-height:16px;
+    padding-left:2px;
+    padding-right:2px;
+    width:100px;
+}

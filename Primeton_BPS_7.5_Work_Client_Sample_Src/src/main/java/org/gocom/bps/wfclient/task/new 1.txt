@@ -1,0 +1,815 @@
+
+C:\primeton\bps>SETLOCAL
+
+C:\primeton\bps>set DIRNAME=C:\primeton\bps\
+
+C:\primeton\bps>set JAVA_HOME=C:\primeton\bps/ide/eclipse/jre
+
+C:\primeton\bps>set CATALINA_BASE=C:\primeton\bps/apache-tomcat-7.0.54
+
+C:\primeton\bps>set EXTERNAL_CONFIG_DIR=C:\primeton\bps/apps_config
+
+C:\primeton\bps>set JAVAC_JAR=C:\primeton\bps/ide/eclipse/jre\lib\tools.jar
+
+C:\primeton\bps>set RUNJAR=C:\primeton\bps/apache-tomcat-7.0.54\bin\bootstrap.jar;C:\primeton\bps/apache-tomcat-7.0.54\bin\tomcat-juli.jar
+
+C:\primeton\bps>set JAVA_OPTS=-Xms128m -Xmx896m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError
+
+C:\primeton\bps>set JAVA_OPTS=-Xms128m -Xmx896m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError   -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file="C:\primeton\bps/apache-tomcat-7.0.54\conf\logging.properties"
+
+C:\primeton\bps>set CATALINA_CLASSPATH=C:\primeton\bps/ide/eclipse/jre\lib\tools.jar;C:\primeton\bps/apache-tomcat-7.0.54\bin\bootstrap.jar;C:\primeton\bps/apache-tomcat-7.0.54\bin\tomcat-juli.jar;
+
+C:\primeton\bps>if "" == "-debug" (set JAVA_OPTS=-Xms128m -Xmx896m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError   -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file="C:\primeton\bps/apache-tomcat-7.0.54\conf\logging.properties" -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8787 -DEOS_DEBUG=true )
+
+C:\primeton\bps>echo.
+
+
+C:\primeton\bps>echo ***************************************************
+***************************************************
+
+C:\primeton\bps>echo *  To start Tomcat Server, use the password       *
+*  To start Tomcat Server, use the password       *
+
+C:\primeton\bps>echo *  assigned to the system user.  The system       *
+*  assigned to the system user.  The system       *
+
+C:\primeton\bps>echo *  username and password must also be used to     *
+*  username and password must also be used to     *
+
+C:\primeton\bps>echo *  access the Tomcat Server console from a web    *
+*  access the Tomcat Server console from a web    *
+
+C:\primeton\bps>echo *  browser.                                       *
+*  browser.                                       *
+
+C:\primeton\bps>echo ***************************************************
+***************************************************
+
+C:\primeton\bps>"C:\primeton\bps/ide/eclipse/jre\bin\java" -Xms128m -Xmx896m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError   -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file="C:\primeton\bps/apache-tomcat-7.0.54\conf\logging.properties" -DEXTERNAL_CONFIG_DIR="C:\primeton\bps/apps_config" -Djava.net.preferIPv4Stack=true -Dorg.apache.jasper.compiler.Parser.STRICT_QUOTE_ESCAPING=false -Djava.endorsed.dirs="C:\primeton\bps/apache-tomcat-7.0.54\common\endorsed" -classpath "C:\primeton\bps/ide/eclipse/jre\lib\tools.jar;C:\primeton\bps/apache-tomcat-7.0.54\bin\bootstrap.jar;C:\primeton\bps/apache-tomcat-7.0.54\bin\tomcat-juli.jar;" -Dcatalina.base="C:\primeton\bps/apache-tomcat-7.0.54" -Dcatalina.home="C:\primeton\bps/apache-tomcat-7.0.54" -Djava.io.tmpdir="C:\primeton\bps/apache-tomcat-7.0.54\temp" org.apache.catalina.startup.Bootstrap  start
+2019-7-15 9:51:31 org.apache.catalina.core.AprLifecycleListener init
+信息: Loaded APR based Apache Tomcat Native library 1.2.16 using APR version 1.6.3.
+2019-7-15 9:51:31 org.apache.catalina.core.AprLifecycleListener init
+信息: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-7-15 9:51:32 org.apache.catalina.core.AprLifecycleListener initializeSSL
+信息: OpenSSL successfully initialized (OpenSSL 1.0.2m  2 Nov 2017)
+2019-7-15 9:51:32 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-apr-8080"]
+2019-7-15 9:51:32 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-apr-8009"]
+2019-7-15 9:51:32 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 922 ms
+2019-7-15 9:51:32 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+2019-7-15 9:51:32 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.54
+2019-7-15 9:51:32 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory C:\primeton\bps\apache-tomcat-7.0.54\webapps\default
+2019-7-15 9:51:47 org.apache.tomcat.websocket.server.WsSci onStartup
+信息: JSR 356 WebSocket (Java WebSocket 1.0) support is not available when running on Java 6. To suppress this message, run Tomcat on Java 7, remove the WebSocket JARs from $CATALINA_HOME/lib or add the WebSocket JARs to the tomcat.util.scan.DefaultJarScanner.jarsToSkip property in $CATALINA_BASE/conf/catalina.properties. Note that the deprecated Tomcat 7 WebSocket API will be available.
+[default][2019-07-15 09:51:47,930][INFO ][SystemService:94]  Begin to start EOS system service
+[default][2019-07-15 09:51:47,949][WARN ][SystemService:105]  Using 127.0.0.1 as local IP address. This may cause network related administrative operations are not available from other machines.
+Load license file from C:\primeton\bps/apps_config/default/license/primetonlicense.xml
+[default][2019-07-15 09:51:48,066][INFO ][ImprimaturStartUpListener:38]  欢迎使用开发版.
+[default][2019-07-15 09:51:48,153][INFO ][ImprimaturStartUpListener:41]  本产品授权:Primeton Customer
+[default][2019-07-15 09:51:48,154][WARN ][ImprimaturStartUpListener:48]  Management mode is limited to single mode
+[default][2019-07-15 09:51:48,156][WARN ][ImprimaturStartUpListener:48]  Concurrency limit is 5
+[default][2019-07-15 09:51:48,158][WARN ][ImprimaturStartUpListener:48]  Cluster feature is not available!
+[default][2019-07-15 09:51:48,334][INFO ][JMXService:95]  Begin to start JMX Service
+[default][2019-07-15 09:51:49,902][INFO ][MBeanServerConnector:232]  MBeanserverConnectorService [url=service:jmx:rmi://127.0.0.1:6200/jndi/rmi://127.0.0.1:6200/jmxDefault.jmx] start!
+[default][2019-07-15 09:51:49,911][INFO ][Application:63]  Application MBean initilized
+[default][2019-07-15 09:51:49,921][INFO ][JMXService:200]  JMX Service started
+[default][2019-07-15 09:51:49,923][INFO ][DomainService:101]  Begin to start EOS system Domain service
+[default][2019-07-15 09:51:50,208][INFO ][DomainService:115]  EOS system Domain service started
+[default][2019-07-15 09:51:51,214][INFO ][HotUpdateService:59]  HotUpdateService started.
+[default][2019-07-15 09:51:51,216][INFO ][SystemService:185]  Primeton BPS version 7.5.0.0 Build No: 1212 (201506091649--1212) Build date: 2015-06-09 16:49
+[default][2019-07-15 09:51:51,218][INFO ][SystemService:230]  EOS system service started successfully
+Mon Jul 15 09:51:52 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Jul 15 09:51:52 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Jul 15 09:51:52 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Jul 15 09:51:52 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Jul 15 09:51:52 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Jul 15 09:51:52 CST 2019 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[default][2019-07-15 09:51:58,460][INFO][com.primeton.spring.loader.SpringConfigFileLoader:51] Spring Config FileLoader load begin.
+[default][2019-07-15 09:51:58,482][INFO][com.primeton.spring.loader.SpringConfigFileLoader:94] Spring Config FileLoader load end.(22)
+Regesit remote handler:RCALL
+[BPS Process Server][2019-07-15 09:52:07,554][INFO] Start BPS Process Server !
+[BPS Process Server][2019-07-15 09:52:07,702][INFO] BPS multi-tenancy mode is false
+[BPS Process Server][2019-07-15 09:52:08,068][INFO] BPS Cluster Framework is False !
+[BPS Process Server][2019-07-15 09:52:08,402][INFO] Initialize BPS bizResource module successful .
+[BPS Process Server][2019-07-15 09:52:08,440][INFO] Server instance simulator start complete
+[BPS Process Server][2019-07-15 09:52:08,482][INFO]  Task resource scheduler model start complete
+[BPS Process Server][2019-07-15 09:52:08,488][INFO] BPS Process Server start up in 956 ms
+[BPS Process Server][2019-07-15 09:52:08,490][INFO] BPS Message Framework is False !
+[default] startup in 21 s.
+2019-7-15 9:52:08 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory C:\primeton\bps\apache-tomcat-7.0.54\webapps\default has finished in 36,416 ms
+2019-7-15 9:52:08 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory C:\primeton\bps\apache-tomcat-7.0.54\webapps\governor
+[governor][2019-07-15 09:52:21,224][INFO ][SystemService:94]  Begin to start EOS system service
+[governor][2019-07-15 09:52:21,250][WARN ][SystemService:105]  Using 127.0.0.1 as local IP address. This may cause network related administrative operations are not available from other machines.
+Load license file from C:\primeton\bps/apps_config/governor/license/primetonlicense.xml
+[governor][2019-07-15 09:52:21,386][INFO ][ImprimaturStartUpListener:38]  欢迎使用开发版.
+[governor][2019-07-15 09:52:21,414][INFO ][ImprimaturStartUpListener:41]  本产品授权:Primeton Customer
+[governor][2019-07-15 09:52:21,417][WARN ][ImprimaturStartUpListener:48]  Management mode is limited to single mode
+[governor][2019-07-15 09:52:21,420][WARN ][ImprimaturStartUpListener:48]  Concurrency limit is 5
+[governor][2019-07-15 09:52:21,421][WARN ][ImprimaturStartUpListener:48]  Cluster feature is not available!
+[governor][2019-07-15 09:52:21,606][INFO ][JMXService:95]  Begin to start JMX Service
+[governor][2019-07-15 09:52:23,111][INFO ][MBeanServerConnector:232]  MBeanserverConnectorService [url=service:jmx:rmi://127.0.0.1:6299/jndi/rmi://127.0.0.1:6299/jmxDefault.jmx] start!
+[governor][2019-07-15 09:52:23,120][INFO ][Application:63]  Application MBean initilized
+[governor][2019-07-15 09:52:23,131][INFO ][JMXService:200]  JMX Service started
+[governor][2019-07-15 09:52:23,133][INFO ][DomainService:101]  Begin to start EOS system Domain service
+[governor][2019-07-15 09:52:23,380][INFO ][DomainService:115]  EOS system Domain service started
+[governor][2019-07-15 09:52:23,385][INFO ][HotUpdateService:59]  HotUpdateService started.
+[governor][2019-07-15 09:52:23,391][INFO ][SystemService:185]  Primeton BPS version 7.5.0.0 Build No: 1212 (201506091649--1212) Build date: 2015-06-09 16:49
+[governor][2019-07-15 09:52:23,394][INFO ][SystemService:230]  EOS system service started successfully
+[governor][2019-07-15 09:52:27,868][INFO][com.primeton.spring.loader.SpringConfigFileLoader:51] Spring Config FileLoader load begin.
+[governor][2019-07-15 09:52:27,886][INFO][com.primeton.spring.loader.SpringConfigFileLoader:94] Spring Config FileLoader load end.(18)
+[governor] startup in 7 s.
+2019-7-15 9:52:28 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory C:\primeton\bps\apache-tomcat-7.0.54\webapps\governor has finished in 19,331 ms
+2019-7-15 9:52:28 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory C:\primeton\bps\apache-tomcat-7.0.54\webapps\workspace
+[workspace][2019-07-15 09:52:45,236][INFO ][SystemService:94]  Begin to start EOS system service
+[workspace][2019-07-15 09:52:45,259][WARN ][SystemService:105]  Using 127.0.0.1 as local IP address. This may cause network related administrative operations are not available from other machines.
+Load license file from C:\primeton\bps/apps_config/workspace/license/primetonlicense.xml
+[workspace][2019-07-15 09:52:45,377][INFO ][ImprimaturStartUpListener:38]  欢迎使用开发版.
+[workspace][2019-07-15 09:52:45,403][INFO ][ImprimaturStartUpListener:41]  本产品授权:Primeton Customer
+[workspace][2019-07-15 09:52:45,404][WARN ][ImprimaturStartUpListener:48]  Management mode is limited to single mode
+[workspace][2019-07-15 09:52:45,406][WARN ][ImprimaturStartUpListener:48]  Concurrency limit is 5
+[workspace][2019-07-15 09:52:45,407][WARN ][ImprimaturStartUpListener:48]  Cluster feature is not available!
+[workspace][2019-07-15 09:52:45,568][INFO ][JMXService:95]  Begin to start JMX Service
+[workspace][2019-07-15 09:52:47,046][INFO ][MBeanServerConnector:232]  MBeanserverConnectorService [url=service:jmx:rmi://127.0.0.1:6399/jndi/rmi://127.0.0.1:6399/jmxDefault.jmx] start!
+[workspace][2019-07-15 09:52:47,054][INFO ][Application:63]  Application MBean initilized
+[workspace][2019-07-15 09:52:47,065][INFO ][JMXService:200]  JMX Service started
+[workspace][2019-07-15 09:52:47,066][INFO ][DomainService:101]  Begin to start EOS system Domain service
+[workspace][2019-07-15 09:52:47,317][INFO ][DomainService:115]  EOS system Domain service started
+[workspace][2019-07-15 09:52:47,322][INFO ][HotUpdateService:59]  HotUpdateService started.
+[workspace][2019-07-15 09:52:47,323][INFO ][SystemService:185]  Primeton BPS version 7.5.0.0 Build No: 1212 (201506091649--1212) Build date: 2015-06-09 16:49
+[workspace][2019-07-15 09:52:47,326][INFO ][SystemService:230]  EOS system service started successfully
+[workspace] startup in 16 s.
+Current charset：UTF-8
+2019-7-15 9:53:01 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory C:\primeton\bps\apache-tomcat-7.0.54\webapps\workspace has finished in 33,861 ms
+2019-7-15 9:53:01 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-apr-8080"]
+2019-7-15 9:53:02 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-apr-8009"]
+2019-7-15 9:53:02 org.apache.catalina.startup.Catalina start
+信息: Server startup in 89697 ms
+[governor][2019-07-15 09:54:16,681][ERROR][com.eos.access.http.UserLoginCheckedFilter:138] access url [/governor/frame/com.primeton.governor.user.Index.flow] must be login.
+com.primeton.governor.user.ServerContext.flow
+com.primeton.governor.user.UserManage.flow
+/governor/governor/user/clearSession.jsp
+[BPS Process Server][2019-07-15 09:55:08,411][INFO] Timer trig first:180000 3000
+Deploy successfully, com.primeton.example.workflow.asynchronism.asyHandlerTest
+Deploy successfully, com.primeton.example.workflow.asynchronism.syHandlerTest
+Deploy successfully, com.primeton.example.workflow.autoform.askForLeave
+Deploy successfully, com.primeton.example.workflow.bran_join_back.Bran_Join_Back
+Process definition does not change
+Deploy successfully, com.primeton.example.workflow.leave.leavemanage
+Deploy successfully, com.primeton.example.workflow.partom.PartCombineOM
+[default][2019-07-15 10:12:00,288][ERROR][com.eos.access.http.UserLoginCheckedFilter:138] access url [/coframe/auth/login/login.jsp] must be login.
+[default][2019-07-15 10:17:23,542][ERROR][com.eos.access.http.UserLoginCheckedFilter:138] access url [/bps/wfclient/login/logout.jsp] must be login.
+ErrCode: 21070002
+Message: 输入参数类型不匹配,型参类型:com.primeton.example.workflow.leave.Leavemaster，实参类型:java.util.HashMap
+        at com.primeton.workflow.service.application.invoke.AbstractInvoker.buildInvokeParameter(AbstractInvoker.java:93)
+        at com.primeton.workflow.service.application.invoke.impl.PojoInvoker.invoke(PojoInvoker.java:205)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller$1.run(ApplicationCaller.java:253)
+        at com.primeton.ext.common.muo.MUOTemplate.execute(MUOTemplate.java:58)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.doInvoke(ApplicationCaller.java:251)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.handleInvoke(ApplicationCaller.java:228)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:359)
+        at com.primeton.workflow.engine.scheduler.application.impl.log.ApplicationLogAction.execute(ApplicationLogAction.java:69)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:262)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.visitors.ToolActivityVisitor.startActivity(ToolActivityVisitor.java:102)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.ActivityExecuter.invoke(ActivityExecuter.java:234)
+        at com.primeton.workflow.event.framework.event.base.WFEventExecutor.handleEvent(WFEventExecutor.java:175)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContext(EventServiceRunnerImpl.java:215)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContextSafe(EventServiceRunnerImpl.java:188)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:168)
+        at com.primeton.workflow.event.framework.event.base.interceptor.EventRunnerInterceptor.invoke(EventRunnerInterceptor.java:91)
+        at com.primeton.workflow.event.framework.EventServiceInterceptor.invoke(EventServiceInterceptor.java:89)
+        at com.primeton.workflow.event.framework.event.base.EventServiceImplDefault.publish(EventServiceImplDefault.java:169)
+        at com.primeton.workflow.engine.scheduler.event.handle.task.WFTaskScheduler.taskHasFinished(WFTaskScheduler.java:247)
+        at com.primeton.workflow.api.listener.WFTaskListener.OnMessage(WFTaskListener.java:25)
+        at com.primeton.workflow.task.message.impl.TaskMessageCenter.fireTaskMessage(TaskMessageCenter.java:104)
+        at com.primeton.workflow.task.service.scheduler.TaskScheduler.finishWorkItem(TaskScheduler.java:641)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:1617)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:163)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemWithRelativeData(WFWorkItemOperateImpl.java:107)
+        at com.primeton.workflow.api.engtask.WorkItemManagerImpl.finishWorkItemWithRelativeData(WorkItemManagerImpl.java:347)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at com.primeton.workflow.api.proxy.EngineTxAction.operatorImplement(EngineTxAction.java:430)
+        at com.primeton.workflow.api.proxy.EngineTxAction.doOperator(EngineTxAction.java:285)
+        at com.primeton.workflow.api.proxy.EngineTxAction.execute(EngineTxAction.java:272)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.api.proxy.EngineInvocationHandlerImpl.invoke(EngineInvocationHandlerImpl.java:156)
+        at com.primeton.workflow.api.proxy.EngineInterceptor.invoke(EngineInterceptor.java:266)
+        at com.sun.proxy.$Proxy26.finishWorkItemWithRelativeData(Unknown Source)
+        at com.eos.workflow.api.impl.WFWorkItemMananger.finishWorkItemWithRelativeData(WFWorkItemMananger.java:924)
+        at org.gocom.bps.wfclient.task.ServiceUtil.executeWorkItem(ServiceUtil.java:101)
+        at org.gocom.bps.wfclient.task.TaskService.executeWorkItem(TaskService.java:65)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:137)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:296)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:250)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:237)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+        at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:64)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:58)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:51)
+        at com.primeton.access.http.impl.DispatchWebInterceptor.doIntercept(DispatchWebInterceptor.java:90)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.authorization.impl.AccessedHttpResourceFilter.doIntercept(AccessedHttpResourceFilter.java:131)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.UserLoginCheckedFilter.doIntercept(UserLoginCheckedFilter.java:124)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.security.HttpRefererWebInterceptor.doIntercept(HttpRefererWebInterceptor.java:47)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.http.impl.WebI18NInterceptor.doIntercept(WebI18NInterceptor.java:64)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.sca.host.webapp.SCAWebServiceServletFilter.doIntercept(SCAWebServiceServletFilter.java:122)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.InterceptorFilter.doFilter(InterceptorFilter.java:120)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.gocom.bps.wfclient.security.HttpSecurityFilter.doFilter(HttpSecurityFilter.java:63)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2442)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2431)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:662)
+ErrCode: 21070014
+Message: 执行自动活动的应用发生异常:ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:264)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.visitors.ToolActivityVisitor.startActivity(ToolActivityVisitor.java:102)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.ActivityExecuter.invoke(ActivityExecuter.java:234)
+        at com.primeton.workflow.event.framework.event.base.WFEventExecutor.handleEvent(WFEventExecutor.java:175)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContext(EventServiceRunnerImpl.java:215)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContextSafe(EventServiceRunnerImpl.java:188)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:168)
+        at com.primeton.workflow.event.framework.event.base.interceptor.EventRunnerInterceptor.invoke(EventRunnerInterceptor.java:91)
+        at com.primeton.workflow.event.framework.EventServiceInterceptor.invoke(EventServiceInterceptor.java:89)
+        at com.primeton.workflow.event.framework.event.base.EventServiceImplDefault.publish(EventServiceImplDefault.java:169)
+        at com.primeton.workflow.engine.scheduler.event.handle.task.WFTaskScheduler.taskHasFinished(WFTaskScheduler.java:247)
+        at com.primeton.workflow.api.listener.WFTaskListener.OnMessage(WFTaskListener.java:25)
+        at com.primeton.workflow.task.message.impl.TaskMessageCenter.fireTaskMessage(TaskMessageCenter.java:104)
+        at com.primeton.workflow.task.service.scheduler.TaskScheduler.finishWorkItem(TaskScheduler.java:641)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:1617)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:163)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemWithRelativeData(WFWorkItemOperateImpl.java:107)
+        at com.primeton.workflow.api.engtask.WorkItemManagerImpl.finishWorkItemWithRelativeData(WorkItemManagerImpl.java:347)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at com.primeton.workflow.api.proxy.EngineTxAction.operatorImplement(EngineTxAction.java:430)
+        at com.primeton.workflow.api.proxy.EngineTxAction.doOperator(EngineTxAction.java:285)
+        at com.primeton.workflow.api.proxy.EngineTxAction.execute(EngineTxAction.java:272)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.api.proxy.EngineInvocationHandlerImpl.invoke(EngineInvocationHandlerImpl.java:156)
+        at com.primeton.workflow.api.proxy.EngineInterceptor.invoke(EngineInterceptor.java:266)
+        at com.sun.proxy.$Proxy26.finishWorkItemWithRelativeData(Unknown Source)
+        at com.eos.workflow.api.impl.WFWorkItemMananger.finishWorkItemWithRelativeData(WFWorkItemMananger.java:924)
+        at org.gocom.bps.wfclient.task.ServiceUtil.executeWorkItem(ServiceUtil.java:101)
+        at org.gocom.bps.wfclient.task.TaskService.executeWorkItem(TaskService.java:65)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:137)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:296)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:250)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:237)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+        at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:64)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:58)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:51)
+        at com.primeton.access.http.impl.DispatchWebInterceptor.doIntercept(DispatchWebInterceptor.java:90)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.authorization.impl.AccessedHttpResourceFilter.doIntercept(AccessedHttpResourceFilter.java:131)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.UserLoginCheckedFilter.doIntercept(UserLoginCheckedFilter.java:124)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.security.HttpRefererWebInterceptor.doIntercept(HttpRefererWebInterceptor.java:47)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.http.impl.WebI18NInterceptor.doIntercept(WebI18NInterceptor.java:64)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.sca.host.webapp.SCAWebServiceServletFilter.doIntercept(SCAWebServiceServletFilter.java:122)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.InterceptorFilter.doFilter(InterceptorFilter.java:120)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.gocom.bps.wfclient.security.HttpSecurityFilter.doFilter(HttpSecurityFilter.java:63)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2442)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2431)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:662)
+Caused by: ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:361)
+        at com.primeton.workflow.engine.scheduler.application.impl.log.ApplicationLogAction.execute(ApplicationLogAction.java:69)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:262)
+        ... 82 more
+Caused by: ErrCode: 21070002
+Message: 输入参数类型不匹配,型参类型:com.primeton.example.workflow.leave.Leavemaster，实参类型:java.util.HashMap
+        at com.primeton.workflow.service.application.invoke.AbstractInvoker.buildInvokeParameter(AbstractInvoker.java:93)
+        at com.primeton.workflow.service.application.invoke.impl.PojoInvoker.invoke(PojoInvoker.java:205)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller$1.run(ApplicationCaller.java:253)
+        at com.primeton.ext.common.muo.MUOTemplate.execute(MUOTemplate.java:58)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.doInvoke(ApplicationCaller.java:251)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.handleInvoke(ApplicationCaller.java:228)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:359)
+        ... 85 more
+[BPS Process Server][2019-07-15 10:19:19,858][ERROR] [4028ef816bf3543e016bf36badcf0220]exec event exception   EVENT={ type=[START_ACTIVITY] processDefID=[21] procInstID=[1] actDefID=[autoActivity] actInstID=[21] workItemID=[0]}  EVENTCONTEXT={
+WFEventContext{ parent=null
+ event0: type=[FINISH_ACTIVITY] processDefID=[21] procInstID=[1] actDefID=[manualActivity3] actInstID=[5] workItemID=[0]
+ event1: type=[SCHEDULE_NEXT_ACTIVITY] processDefID=[21] procInstID=[1] actDefID=[manualActivity3] actInstID=[5] workItemID=[0]
+ event2: type=[START_ACTIVITY] processDefID=[21] procInstID=[1] actDefID=[autoActivity] actInstID=[21] workItemID=[0]
+ currentPos=2
+ isStopped=false
+}}
+ErrCode: 21070014
+Message: 执行自动活动的应用发生异常:ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:264)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.visitors.ToolActivityVisitor.startActivity(ToolActivityVisitor.java:102)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.ActivityExecuter.invoke(ActivityExecuter.java:234)
+        at com.primeton.workflow.event.framework.event.base.WFEventExecutor.handleEvent(WFEventExecutor.java:175)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContext(EventServiceRunnerImpl.java:215)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContextSafe(EventServiceRunnerImpl.java:188)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:168)
+        at com.primeton.workflow.event.framework.event.base.interceptor.EventRunnerInterceptor.invoke(EventRunnerInterceptor.java:91)
+        at com.primeton.workflow.event.framework.EventServiceInterceptor.invoke(EventServiceInterceptor.java:89)
+        at com.primeton.workflow.event.framework.event.base.EventServiceImplDefault.publish(EventServiceImplDefault.java:169)
+        at com.primeton.workflow.engine.scheduler.event.handle.task.WFTaskScheduler.taskHasFinished(WFTaskScheduler.java:247)
+        at com.primeton.workflow.api.listener.WFTaskListener.OnMessage(WFTaskListener.java:25)
+        at com.primeton.workflow.task.message.impl.TaskMessageCenter.fireTaskMessage(TaskMessageCenter.java:104)
+        at com.primeton.workflow.task.service.scheduler.TaskScheduler.finishWorkItem(TaskScheduler.java:641)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:1617)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:163)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemWithRelativeData(WFWorkItemOperateImpl.java:107)
+        at com.primeton.workflow.api.engtask.WorkItemManagerImpl.finishWorkItemWithRelativeData(WorkItemManagerImpl.java:347)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at com.primeton.workflow.api.proxy.EngineTxAction.operatorImplement(EngineTxAction.java:430)
+        at com.primeton.workflow.api.proxy.EngineTxAction.doOperator(EngineTxAction.java:285)
+        at com.primeton.workflow.api.proxy.EngineTxAction.execute(EngineTxAction.java:272)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.api.proxy.EngineInvocationHandlerImpl.invoke(EngineInvocationHandlerImpl.java:156)
+        at com.primeton.workflow.api.proxy.EngineInterceptor.invoke(EngineInterceptor.java:266)
+        at com.sun.proxy.$Proxy26.finishWorkItemWithRelativeData(Unknown Source)
+        at com.eos.workflow.api.impl.WFWorkItemMananger.finishWorkItemWithRelativeData(WFWorkItemMananger.java:924)
+        at org.gocom.bps.wfclient.task.ServiceUtil.executeWorkItem(ServiceUtil.java:101)
+        at org.gocom.bps.wfclient.task.TaskService.executeWorkItem(TaskService.java:65)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:137)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:296)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:250)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:237)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+        at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:64)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:58)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:51)
+        at com.primeton.access.http.impl.DispatchWebInterceptor.doIntercept(DispatchWebInterceptor.java:90)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.authorization.impl.AccessedHttpResourceFilter.doIntercept(AccessedHttpResourceFilter.java:131)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.UserLoginCheckedFilter.doIntercept(UserLoginCheckedFilter.java:124)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.security.HttpRefererWebInterceptor.doIntercept(HttpRefererWebInterceptor.java:47)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.http.impl.WebI18NInterceptor.doIntercept(WebI18NInterceptor.java:64)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.sca.host.webapp.SCAWebServiceServletFilter.doIntercept(SCAWebServiceServletFilter.java:122)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.InterceptorFilter.doFilter(InterceptorFilter.java:120)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.gocom.bps.wfclient.security.HttpSecurityFilter.doFilter(HttpSecurityFilter.java:63)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2442)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2431)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:662)
+Caused by: ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:361)
+        at com.primeton.workflow.engine.scheduler.application.impl.log.ApplicationLogAction.execute(ApplicationLogAction.java:69)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:262)
+        ... 82 more
+Caused by: ErrCode: 21070002
+Message: 输入参数类型不匹配,型参类型:com.primeton.example.workflow.leave.Leavemaster，实参类型:java.util.HashMap
+        at com.primeton.workflow.service.application.invoke.AbstractInvoker.buildInvokeParameter(AbstractInvoker.java:93)
+        at com.primeton.workflow.service.application.invoke.impl.PojoInvoker.invoke(PojoInvoker.java:205)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller$1.run(ApplicationCaller.java:253)
+        at com.primeton.ext.common.muo.MUOTemplate.execute(MUOTemplate.java:58)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.doInvoke(ApplicationCaller.java:251)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.handleInvoke(ApplicationCaller.java:228)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:359)
+        ... 85 more
+java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at com.primeton.workflow.api.proxy.EngineTxAction.operatorImplement(EngineTxAction.java:430)
+        at com.primeton.workflow.api.proxy.EngineTxAction.doOperator(EngineTxAction.java:285)
+        at com.primeton.workflow.api.proxy.EngineTxAction.execute(EngineTxAction.java:272)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.api.proxy.EngineInvocationHandlerImpl.invoke(EngineInvocationHandlerImpl.java:156)
+        at com.primeton.workflow.api.proxy.EngineInterceptor.invoke(EngineInterceptor.java:266)
+        at com.sun.proxy.$Proxy26.finishWorkItemWithRelativeData(Unknown Source)
+        at com.eos.workflow.api.impl.WFWorkItemMananger.finishWorkItemWithRelativeData(WFWorkItemMananger.java:924)
+        at org.gocom.bps.wfclient.task.ServiceUtil.executeWorkItem(ServiceUtil.java:101)
+        at org.gocom.bps.wfclient.task.TaskService.executeWorkItem(TaskService.java:65)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:137)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:296)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:250)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:237)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+        at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:64)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:58)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:51)
+        at com.primeton.access.http.impl.DispatchWebInterceptor.doIntercept(DispatchWebInterceptor.java:90)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.authorization.impl.AccessedHttpResourceFilter.doIntercept(AccessedHttpResourceFilter.java:131)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.UserLoginCheckedFilter.doIntercept(UserLoginCheckedFilter.java:124)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.security.HttpRefererWebInterceptor.doIntercept(HttpRefererWebInterceptor.java:47)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.http.impl.WebI18NInterceptor.doIntercept(WebI18NInterceptor.java:64)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.sca.host.webapp.SCAWebServiceServletFilter.doIntercept(SCAWebServiceServletFilter.java:122)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.InterceptorFilter.doFilter(InterceptorFilter.java:120)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.gocom.bps.wfclient.security.HttpSecurityFilter.doFilter(HttpSecurityFilter.java:63)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2442)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2431)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:662)
+Caused by: java.lang.RuntimeException: ErrCode: 21070014
+Message: 执行自动活动的应用发生异常:ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:174)
+        at com.primeton.workflow.event.framework.event.base.interceptor.EventRunnerInterceptor.invoke(EventRunnerInterceptor.java:91)
+        at com.primeton.workflow.event.framework.EventServiceInterceptor.invoke(EventServiceInterceptor.java:89)
+        at com.primeton.workflow.event.framework.event.base.EventServiceImplDefault.publish(EventServiceImplDefault.java:169)
+        at com.primeton.workflow.engine.scheduler.event.handle.task.WFTaskScheduler.taskHasFinished(WFTaskScheduler.java:247)
+        at com.primeton.workflow.api.listener.WFTaskListener.OnMessage(WFTaskListener.java:25)
+        at com.primeton.workflow.task.message.impl.TaskMessageCenter.fireTaskMessage(TaskMessageCenter.java:104)
+        at com.primeton.workflow.task.service.scheduler.TaskScheduler.finishWorkItem(TaskScheduler.java:641)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:1617)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:163)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemWithRelativeData(WFWorkItemOperateImpl.java:107)
+        at com.primeton.workflow.api.engtask.WorkItemManagerImpl.finishWorkItemWithRelativeData(WorkItemManagerImpl.java:347)
+        ... 65 more
+Caused by: ErrCode: 21070014
+Message: 执行自动活动的应用发生异常:ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:264)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.visitors.ToolActivityVisitor.startActivity(ToolActivityVisitor.java:102)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.ActivityExecuter.invoke(ActivityExecuter.java:234)
+        at com.primeton.workflow.event.framework.event.base.WFEventExecutor.handleEvent(WFEventExecutor.java:175)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContext(EventServiceRunnerImpl.java:215)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContextSafe(EventServiceRunnerImpl.java:188)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:168)
+        ... 76 more
+Caused by: ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:361)
+        at com.primeton.workflow.engine.scheduler.application.impl.log.ApplicationLogAction.execute(ApplicationLogAction.java:69)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:262)
+        ... 82 more
+Caused by: ErrCode: 21070002
+Message: 输入参数类型不匹配,型参类型:com.primeton.example.workflow.leave.Leavemaster，实参类型:java.util.HashMap
+        at com.primeton.workflow.service.application.invoke.AbstractInvoker.buildInvokeParameter(AbstractInvoker.java:93)
+        at com.primeton.workflow.service.application.invoke.impl.PojoInvoker.invoke(PojoInvoker.java:205)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller$1.run(ApplicationCaller.java:253)
+        at com.primeton.ext.common.muo.MUOTemplate.execute(MUOTemplate.java:58)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.doInvoke(ApplicationCaller.java:251)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.handleInvoke(ApplicationCaller.java:228)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:359)
+        ... 85 more
+[BPS Process Server][2019-07-15 10:19:20,007][ERROR] [4028ef816bf3543e016bf36badcf0220]Invalidate process instance [@ProcInstID][1]
+[BPS Process Server][2019-07-15 10:19:20,009][ERROR] [4028ef816bf3543e016bf36badcf0220]Message: userID=kitty, methodName=finishWorkItemWithRelativeData, actionType=ENGOPT, procInstID=1, workItemID=3
+java.lang.reflect.InvocationTargetException
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at com.primeton.workflow.api.proxy.EngineTxAction.operatorImplement(EngineTxAction.java:430)
+        at com.primeton.workflow.api.proxy.EngineTxAction.doOperator(EngineTxAction.java:285)
+        at com.primeton.workflow.api.proxy.EngineTxAction.execute(EngineTxAction.java:272)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.api.proxy.EngineInvocationHandlerImpl.invoke(EngineInvocationHandlerImpl.java:156)
+        at com.primeton.workflow.api.proxy.EngineInterceptor.invoke(EngineInterceptor.java:266)
+        at com.sun.proxy.$Proxy26.finishWorkItemWithRelativeData(Unknown Source)
+        at com.eos.workflow.api.impl.WFWorkItemMananger.finishWorkItemWithRelativeData(WFWorkItemMananger.java:924)
+        at org.gocom.bps.wfclient.task.ServiceUtil.executeWorkItem(ServiceUtil.java:101)
+        at org.gocom.bps.wfclient.task.TaskService.executeWorkItem(TaskService.java:65)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:137)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:296)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:250)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:237)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+        at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:64)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:58)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:51)
+        at com.primeton.access.http.impl.DispatchWebInterceptor.doIntercept(DispatchWebInterceptor.java:90)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.authorization.impl.AccessedHttpResourceFilter.doIntercept(AccessedHttpResourceFilter.java:131)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.UserLoginCheckedFilter.doIntercept(UserLoginCheckedFilter.java:124)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.security.HttpRefererWebInterceptor.doIntercept(HttpRefererWebInterceptor.java:47)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.http.impl.WebI18NInterceptor.doIntercept(WebI18NInterceptor.java:64)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.sca.host.webapp.SCAWebServiceServletFilter.doIntercept(SCAWebServiceServletFilter.java:122)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.InterceptorFilter.doFilter(InterceptorFilter.java:120)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.gocom.bps.wfclient.security.HttpSecurityFilter.doFilter(HttpSecurityFilter.java:63)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2442)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2431)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:662)
+Caused by: java.lang.RuntimeException: ErrCode: 21070014
+Message: 执行自动活动的应用发生异常:ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:174)
+        at com.primeton.workflow.event.framework.event.base.interceptor.EventRunnerInterceptor.invoke(EventRunnerInterceptor.java:91)
+        at com.primeton.workflow.event.framework.EventServiceInterceptor.invoke(EventServiceInterceptor.java:89)
+        at com.primeton.workflow.event.framework.event.base.EventServiceImplDefault.publish(EventServiceImplDefault.java:169)
+        at com.primeton.workflow.engine.scheduler.event.handle.task.WFTaskScheduler.taskHasFinished(WFTaskScheduler.java:247)
+        at com.primeton.workflow.api.listener.WFTaskListener.OnMessage(WFTaskListener.java:25)
+        at com.primeton.workflow.task.message.impl.TaskMessageCenter.fireTaskMessage(TaskMessageCenter.java:104)
+        at com.primeton.workflow.task.service.scheduler.TaskScheduler.finishWorkItem(TaskScheduler.java:641)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:1617)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:163)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemWithRelativeData(WFWorkItemOperateImpl.java:107)
+        at com.primeton.workflow.api.engtask.WorkItemManagerImpl.finishWorkItemWithRelativeData(WorkItemManagerImpl.java:347)
+        ... 65 more
+Caused by: ErrCode: 21070014
+Message: 执行自动活动的应用发生异常:ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:264)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.visitors.ToolActivityVisitor.startActivity(ToolActivityVisitor.java:102)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.ActivityExecuter.invoke(ActivityExecuter.java:234)
+        at com.primeton.workflow.event.framework.event.base.WFEventExecutor.handleEvent(WFEventExecutor.java:175)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContext(EventServiceRunnerImpl.java:215)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContextSafe(EventServiceRunnerImpl.java:188)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:168)
+        ... 76 more
+Caused by: ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:361)
+        at com.primeton.workflow.engine.scheduler.application.impl.log.ApplicationLogAction.execute(ApplicationLogAction.java:69)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:262)
+        ... 82 more
+Caused by: ErrCode: 21070002
+Message: 输入参数类型不匹配,型参类型:com.primeton.example.workflow.leave.Leavemaster，实参类型:java.util.HashMap
+        at com.primeton.workflow.service.application.invoke.AbstractInvoker.buildInvokeParameter(AbstractInvoker.java:93)
+        at com.primeton.workflow.service.application.invoke.impl.PojoInvoker.invoke(PojoInvoker.java:205)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller$1.run(ApplicationCaller.java:253)
+        at com.primeton.ext.common.muo.MUOTemplate.execute(MUOTemplate.java:58)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.doInvoke(ApplicationCaller.java:251)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.handleInvoke(ApplicationCaller.java:228)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:359)
+        ... 85 more
+[07-15 10:19:20,023][ERROR][org.gocom.bps.wfclient.task.TaskService:68]
+ErrCode: 21000000
+Message: NULL
+        at com.primeton.workflow.api.proxy.EngineTxAction.doOperator(EngineTxAction.java:311)
+        at com.primeton.workflow.api.proxy.EngineTxAction.execute(EngineTxAction.java:272)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.api.proxy.EngineInvocationHandlerImpl.invoke(EngineInvocationHandlerImpl.java:156)
+        at com.primeton.workflow.api.proxy.EngineInterceptor.invoke(EngineInterceptor.java:266)
+        at com.sun.proxy.$Proxy26.finishWorkItemWithRelativeData(Unknown Source)
+        at com.eos.workflow.api.impl.WFWorkItemMananger.finishWorkItemWithRelativeData(WFWorkItemMananger.java:924)
+        at org.gocom.bps.wfclient.task.ServiceUtil.executeWorkItem(ServiceUtil.java:101)
+        at org.gocom.bps.wfclient.task.TaskService.executeWorkItem(TaskService.java:65)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:137)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:296)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:250)
+        at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:237)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+        at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+        at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:64)
+        at com.primeton.components.rest.extend.CustomHttpServletDispatcher.service(CustomHttpServletDispatcher.java:58)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:51)
+        at com.primeton.access.http.impl.DispatchWebInterceptor.doIntercept(DispatchWebInterceptor.java:90)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.authorization.impl.AccessedHttpResourceFilter.doIntercept(AccessedHttpResourceFilter.java:131)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.UserLoginCheckedFilter.doIntercept(UserLoginCheckedFilter.java:124)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.security.HttpRefererWebInterceptor.doIntercept(HttpRefererWebInterceptor.java:47)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.access.http.impl.WebI18NInterceptor.doIntercept(WebI18NInterceptor.java:64)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.primeton.sca.host.webapp.SCAWebServiceServletFilter.doIntercept(SCAWebServiceServletFilter.java:122)
+        at com.primeton.access.http.impl.WebInterceptorChainImpl.doIntercept(WebInterceptorChainImpl.java:56)
+        at com.eos.access.http.InterceptorFilter.doFilter(InterceptorFilter.java:120)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.gocom.bps.wfclient.security.HttpSecurityFilter.doFilter(HttpSecurityFilter.java:63)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:501)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:171)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+        at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:408)
+        at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1040)
+        at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:607)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2442)
+        at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2431)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:662)
+Caused by: java.lang.RuntimeException: ErrCode: 21070014
+Message: 执行自动活动的应用发生异常:ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:174)
+        at com.primeton.workflow.event.framework.event.base.interceptor.EventRunnerInterceptor.invoke(EventRunnerInterceptor.java:91)
+        at com.primeton.workflow.event.framework.EventServiceInterceptor.invoke(EventServiceInterceptor.java:89)
+        at com.primeton.workflow.event.framework.event.base.EventServiceImplDefault.publish(EventServiceImplDefault.java:169)
+        at com.primeton.workflow.engine.scheduler.event.handle.task.WFTaskScheduler.taskHasFinished(WFTaskScheduler.java:247)
+        at com.primeton.workflow.api.listener.WFTaskListener.OnMessage(WFTaskListener.java:25)
+        at com.primeton.workflow.task.message.impl.TaskMessageCenter.fireTaskMessage(TaskMessageCenter.java:104)
+        at com.primeton.workflow.task.service.scheduler.TaskScheduler.finishWorkItem(TaskScheduler.java:641)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:1617)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemInner(WFWorkItemOperateImpl.java:163)
+        at com.primeton.workflow.task.engtask.WFWorkItemOperateImpl.finishWorkItemWithRelativeData(WFWorkItemOperateImpl.java:107)
+        at com.primeton.workflow.api.engtask.WorkItemManagerImpl.finishWorkItemWithRelativeData(WorkItemManagerImpl.java:347)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at com.primeton.workflow.api.proxy.EngineTxAction.operatorImplement(EngineTxAction.java:430)
+        at com.primeton.workflow.api.proxy.EngineTxAction.doOperator(EngineTxAction.java:285)
+        ... 59 more
+Caused by: ErrCode: 21070014
+Message: 执行自动活动的应用发生异常:ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:264)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.visitors.ToolActivityVisitor.startActivity(ToolActivityVisitor.java:102)
+        at com.primeton.workflow.engine.scheduler.event.handler.activity.ActivityExecuter.invoke(ActivityExecuter.java:234)
+        at com.primeton.workflow.event.framework.event.base.WFEventExecutor.handleEvent(WFEventExecutor.java:175)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContext(EventServiceRunnerImpl.java:215)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.processOneContextSafe(EventServiceRunnerImpl.java:188)
+        at com.primeton.workflow.event.framework.event.base.EventServiceRunnerImpl.process(EventServiceRunnerImpl.java:168)
+        ... 76 more
+Caused by: ErrCode: 21070016
+Message: 执行应用调用发生异常:pojo
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:361)
+        at com.primeton.workflow.engine.scheduler.application.impl.log.ApplicationLogAction.execute(ApplicationLogAction.java:69)
+        at com.primeton.workflow.engine.scheduler.enginelog.EngineLogExecutor.executeAction(EngineLogExecutor.java:162)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeAutoActivity(ToolAgentManager.java:262)
+        ... 82 more
+Caused by: ErrCode: 21070002
+Message: 输入参数类型不匹配,型参类型:com.primeton.example.workflow.leave.Leavemaster，实参类型:java.util.HashMap
+        at com.primeton.workflow.service.application.invoke.AbstractInvoker.buildInvokeParameter(AbstractInvoker.java:93)
+        at com.primeton.workflow.service.application.invoke.impl.PojoInvoker.invoke(PojoInvoker.java:205)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller$1.run(ApplicationCaller.java:253)
+        at com.primeton.ext.common.muo.MUOTemplate.execute(MUOTemplate.java:58)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.doInvoke(ApplicationCaller.java:251)
+        at com.primeton.workflow.service.application.impl.ApplicationCaller.handleInvoke(ApplicationCaller.java:228)
+        at com.primeton.workflow.engine.scheduler.application.impl.ToolAgentManager.executeApplication(ToolAgentManager.java:359)
+        ... 85 more

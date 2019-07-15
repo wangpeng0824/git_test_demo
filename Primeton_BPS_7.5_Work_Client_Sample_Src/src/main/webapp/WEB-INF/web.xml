@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="defaultWebApp" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+	<context-param>
+		<param-name>rest.config.locations</param-name>
+		<param-value>
+			classpath*:META-INF/services/restconfig.properties
+		</param-value>
+	 </context-param>
+	 <context-param>
+		<param-name>resteasy.injector.factory</param-name>
+		<param-value>com.primeton.components.rest.extend.JSONInjectorFactoryImpl</param-value>
+	 </context-param>
+	 
+	 
+	 <!-- 安全配置 -->
+	 <context-param>
+		<param-name>isOpenSecurity</param-name>
+		<param-value>false</param-value>
+	 </context-param>
+	 <context-param>
+		<param-name>isAllInHttps</param-name>
+		<param-value>false</param-value>
+	 </context-param>
+	 <context-param>
+		<param-name>host</param-name>
+		<param-value>localhost</param-value>
+	 </context-param>
+	 <context-param>
+		<param-name>http-port</param-name>
+		<param-value>8080</param-value>
+	 </context-param>
+	 <context-param>
+		<param-name>https-port</param-name>
+		<param-value>8443</param-value>
+	 </context-param>
+	 <!-- 安全配置 -->
+	 
+	<display-name>bps-client</display-name>
+	
+	<welcome-file-list>
+		<welcome-file>/bps/wfclient/login/login.jsp</welcome-file>
+	</welcome-file-list>
+	<listener>
+		<listener-class>org.gocom.bps.wfclient.BpsClientListener</listener-class>
+	</listener>	
+	
+	<filter>
+		<filter-name>clientFilter</filter-name>
+		<filter-class>org.gocom.bps.wfclient.login.LoginFilter</filter-class>
+	</filter>	
+	
+	<filter-mapping>
+        <filter-name>clientFilter</filter-name>
+        <url-pattern>/rest/services/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>	
+    <filter-mapping>
+        <filter-name>clientFilter</filter-name>
+        <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>	
+	
+	<servlet>
+	   	<servlet-name>resteasyservlet</servlet-name>
+	   	<servlet-class>
+				com.primeton.components.rest.extend.CustomHttpServletDispatcher
+		</servlet-class>
+	 </servlet>
+	<servlet-mapping>
+	   	<servlet-name>resteasyservlet</servlet-name>
+	   	<url-pattern>/rest/services/*</url-pattern>
+	 </servlet-mapping>
+	 
+	 <!-- 安全filter -->
+    <filter>
+		<filter-name>SecurityFilter</filter-name>
+		<filter-class>org.gocom.bps.wfclient.security.HttpSecurityFilter</filter-class>
+		
+		<init-param>
+		<param-name>Exclude</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>regexs</param-name>
+			<param-value>eval\s*?\([^\)]+?\),alert\s*?\([^\)]+?\),new\s+?Function\s*?\([^\)]+?\),window\[[^\]]+?\]\s*?=</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>/rest/services/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>SecurityFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+</web-app>
